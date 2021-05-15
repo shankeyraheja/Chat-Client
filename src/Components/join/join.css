@@ -15,8 +15,7 @@ html, body {
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-image: url("D:/React Apps/Chat/frontend/chat/src/images/back.jpg");
-  background-repeat: no-repeat;
+  background-image: url("./back.jpg");
   border-radius: 10px;
   height: 100vh;
   overflow: scroll;
@@ -61,13 +60,13 @@ html, body {
 
 @media (min-width: 320px) and (max-width: 480px) {
   .joinOuterContainer {
-    height: 100%;
+    height: 100vh;
   }
 
   .joinInnerContainer {
-    width: 90%;
+    width:90vw;
+    height: 90vh
   }
-
 
 }
 

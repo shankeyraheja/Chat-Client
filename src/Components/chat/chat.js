@@ -7,7 +7,7 @@ import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import './chat.css';
 let socket
-const ENDPOINT = "localhost:5000"
+const ENDPOINT = "https://afternoon-mountain-07575.herokuapp.com/"
 const Chat = ({location}) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
@@ -24,8 +24,10 @@ const Chat = ({location}) => {
     setName(name)
     setRoom(room)
     console.log(socket)
-    socket.emit("join", {name, room}, () => {
-
+    socket.emit("join", {name, room}, (error) => {
+      if(error) {
+      alert(error);
+    }
     })
     return () => {
       socket.emit("disconnect")
